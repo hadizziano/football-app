@@ -1,0 +1,35 @@
+.headercontainer {
+  display: flex;
+  color: white;
+  height: 60px;
+  background-color: rgb(104, 132, 110);
+  background-size: contain;
+}
+
+.menu {
+  color: black;
+  display: flex;
+  background-color: rgb(179, 210, 179);
+  width: 100%;
+  height: 20px;
+}
+.menu div {
+  background-color: rgb(51, 73, 54);
+  color: rgb(179, 210, 179);
+  margin-left: 5px;
+  margin-top: 10px;
+  padding: 9px;
+  border-radius: 7px;
+  height: 20px;
+}
+.menu div:hover {
+  background-color: rgb(179, 210, 179);
+  cursor: pointer;
+  color: rgb(51, 73, 54);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.headerImage {
+  width: 100%;
+  opacity: 90%;
+}/*# sourceMappingURL=components.css.map */

@@ -1,0 +1,4 @@
+export const SET_USER_REQUEST = "SET_USER_REQUEST";
+export const SET_DATA_SUCCESS = "SET_DATA_SUCCESS";
+export const SET_DATA_FAILURE = "SET_DATA_FAILURE";
+export const SET_DATA_START = "SET_DATA_START";
