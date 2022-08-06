@@ -8,7 +8,7 @@ import { useRoutes, BrowserRouter as Router } from "react-router-dom";
 
 export const App = ({ getData }) => {
   useEffect(() => {
-    getData();
+    getData("italy");
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

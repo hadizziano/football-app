@@ -10,12 +10,13 @@ import { setDataSuccess, setDataFailure, setDataStart } from "./actions";
 
 export const getData = (value) => async (dispatch, getState) => {
   dispatch(setDataStart(value));
+
   try {
     console.log("sending req");
-    let url = "http://localhost:3100/" + "italy";
+    let url = "http://localhost:3100/" + value;
     const res = await axios.get(url, {
       params: {
-        op1: "AS Roma",
+        op1: "AC Milan",
       },
     });
     // console.log(res.data);
