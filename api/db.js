@@ -7,6 +7,15 @@ module.exports = {
       result: "2-1",
       scorrers: "Totti , Ibrahimovic(2)",
     },
+
+    {
+      op1: "Atalanta",
+      op2: "Fiorentina",
+      date: "09/07/2022",
+      result: "8-1",
+      scorrers: "Totti , Ibrahimovic(2)",
+    },
+
     {
       op1: "Atalanta",
       op2: "AS Roma",
