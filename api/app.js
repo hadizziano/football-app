@@ -1,38 +1,23 @@
-var db = require("./db");
-var express = require("express");
-var app = express();
-const cors = require("cors");
-
-const corsOption = {
-  origin: ["http://localhost:3000"],
-};
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const gamesRoute = require("./routes/games");
+var cors = require('cors')
+// const initializeDb = require("./db/initialize-db");
+//Routes
 app.use(cors());
+app.use(bodyParser.json());
+app.use("/games", gamesRoute);
 
-app.listen(3100, () => {
-  console.log("Server running on port 3100");
-});
+// app.get("/", (req, res) => res.send("we are on home"));
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({
-    message: err.message,
-    errors: err.errors,
-  });
-});
+//connect to db
+// initializeDb();
+mongoose.connect("mongodb://localhost:27017/football-app", () =>
+  console.log("connected to db")
+);
 
-app.get("/italy", (req, res, next) => {
-  gameResults = db.italy.map((item) =>
-    item.op1 === req.query.op1 || item.op2 === req.query.op1
-      ? item.op1 + "  " + item.result + "  " + item.op2
-      : next
-  );
-  res.json(gameResults);
-});
+// How to listen to the server?
 
-app.get("/spain", (req, res, next) => {
-  gameResults = db.spain.map((item) =>
-    item.op1 === req.query.op1 || item.op2 === req.query.op1
-      ? item.op1 + "  " + item.result + "  " + item.op2
-      : next
-  );
-  res.json(gameResults);
-});
+app.listen(3100);
