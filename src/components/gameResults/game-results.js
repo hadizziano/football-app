@@ -39,7 +39,7 @@ export const GameResults = ({ getData }) => {
       </select>
 
       {results.map((item) => (
-        <div>{item}</div>
+        <div>{item.team1 + "  "+ item.gameResult +"  "+ item.team2}</div>
       ))}
     </div>
   );

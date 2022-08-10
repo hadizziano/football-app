@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useSelector } from "react-redux/es/exports";
+import { applyMiddleware } from "redux";
 import { setDataSuccess, setDataFailure, setDataStart } from "./actions";
 
 export const getData = (value, country, team) => async (dispatch, getState) => {
@@ -8,22 +9,19 @@ export const getData = (value, country, team) => async (dispatch, getState) => {
   console.log(country, team);
   dispatch(setDataStart(value));
 
+
   try {
     console.log("sending req");
-    let url = "http://localhost:3100/" + country;
+    let url = "http://localhost:3100/games" ;
     const res = await axios.get(url, {
       params: {
-        op1: team,
+        team1: team,
       },
     });
-    // console.log(res.data);
-    dispatch(setDataSuccess(res.data));
+      dispatch(setDataSuccess(res.data));
   } catch (err) {
     dispatch(setDataFailure(err));
   }
 };
 
-const mapStateToProps = (state) => {
-  const { country, team } = state.data;
-  return { country, team };
-};
+
