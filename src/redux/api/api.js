@@ -4,24 +4,44 @@ import { applyMiddleware } from "redux";
 import { setDataSuccess, setDataFailure, setDataStart } from "./actions";
 
 export const getData = (value, country, team) => async (dispatch, getState) => {
-  // const country = useSelector((state) => state.searchReducer.country);
-  // const team = useSelector((state) => state.searchReducer.team);
   console.log(country, team);
   dispatch(setDataStart(value));
-
-
   try {
-    console.log("sending req");
-    let url = "http://localhost:3100/games" ;
+    let url = "http://localhost:3100/games";
     const res = await axios.get(url, {
       params: {
         team1: team,
       },
     });
-      dispatch(setDataSuccess(res.data));
+    dispatch(setDataSuccess(res.data));
   } catch (err) {
     dispatch(setDataFailure(err));
   }
 };
 
+export const resetDatabase = async () => {
+  console.log("aaaaaaa");
+  try {
+    const reset = await axios.post("http://localhost:3100/games/reset");
+    // console.log(reset);
+  } catch (err) {
+    console.log(err);
+  }
+};
 
+export const insert_game = async (teams1, teams2, gameResult) => {
+  console.log(teams1);
+  try {
+    let url = "http://localhost:3100/games/insertgame";
+    const res = await axios.post(url, {
+      params: {
+        team1: teams1,
+        team2: teams2,
+        gameResult: gameResult,
+      },
+    });
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
+};

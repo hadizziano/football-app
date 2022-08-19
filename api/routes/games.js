@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const Game = require("../models/games");
 
-
 //RESET DATABASE
 
 router.post("/reset", async (req, res) => {
@@ -15,14 +14,11 @@ router.post("/reset", async (req, res) => {
   }
 });
 
-
-
 // GET BACK ALL THE POSTS
 
 router.get("/", async (req, res) => {
   try {
-    
-    const games = await Game.find({"team1": req.query.team1});
+    const games = await Game.find({ team1: req.query.team1 });
     console.log(req.query);
     res.json(games);
   } catch (err) {
@@ -32,12 +28,13 @@ router.get("/", async (req, res) => {
 
 //SUBMIT A POST
 
-router.post("/", async (req, res) => {
+router.post("/insertgame", async (req, res) => {
+  console.log(req.body);
   const game = new Game({
-    team1: req.body.team1,
-    team2: req.body.team2,
-    gameResult: req.body.gameResult,
-    scorrers: req.body.scorrers,
+    team1: req.body.params.team1,
+    team2: req.body.params.team2,
+    gameResult: req.body.params.gameResult,
+    scorrers: "non",
   });
   try {
     const savedGame = await game.save();
