@@ -2,9 +2,10 @@ import { useSelector } from "react-redux";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "./style.css";
-import { getData } from "../../redux/api/api";
+import { getData, resetDatabase } from "../../redux/api/api";
 import { connect, useDispatch } from "react-redux/es/exports";
 import { setTeam } from "../../redux/search/actions";
+import ResetDatabase from "../reset-database/reset";
 export const GameResults = ({ getData }) => {
   const [selectedTeam, setSelectedTeam] = useState();
   const [selectedCountry, setSelectedCountry] = useState();
@@ -39,7 +40,7 @@ export const GameResults = ({ getData }) => {
       </select>
 
       {results.map((item) => (
-        <div>{item.team1 + "  "+ item.gameResult +"  "+ item.team2}</div>
+        <div>{item.team1 + "  " + item.gameResult + "  " + item.team2}</div>
       ))}
     </div>
   );
