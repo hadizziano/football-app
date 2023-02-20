@@ -3,5 +3,9 @@
   height: 500px;
   margin: 20px;
   width: 300px;
-  background-color: gray;
+  background-color: rgb(112, 112, 112);
+  padding: 20px;
+}
+
+.selectorsContainer {
 }

@@ -40,7 +40,10 @@ export const GameResults = ({ getData }) => {
       </select>
 
       {results.map((item) => (
-        <div>{item.team1 + "  " + item.gameResult + "  " + item.team2}</div>
+        <div classname="resultdemonstrator">
+          <br />
+          {item.team1 + "  " + item.gameResult + "  " + item.team2}
+        </div>
       ))}
     </div>
   );

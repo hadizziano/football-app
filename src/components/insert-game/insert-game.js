@@ -19,8 +19,8 @@ export const InsertGame = () => {
     insert_game(team1, team2, goals1 + " - " + goals2);
   };
   return (
-    <div>
-      <div>
+    <div classname="resultcontainer">
+      <div className="selectorsContainer">
         team1
         <select
           name="team1"

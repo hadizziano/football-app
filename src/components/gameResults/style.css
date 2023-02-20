@@ -1,7 +1,3 @@
-.resultcontainer {
-  width: 400px;
-  height: 500px;
-  margin: 20px;
-  width: 300px;
-  background-color: gray;
+.resultdemonstrator {
+  background-color: red;
 }
