@@ -1,9 +1,10 @@
 .headercontainer {
   display: flex;
   color: white;
-  height: 60px;
   background-color: rgb(104, 132, 110);
   background-size: contain;
+  position: absolute;
+  width: 100%;
 }
 
 .menu {
@@ -28,9 +29,3 @@
   color: rgb(51, 73, 54);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-.headerImage {
-  width: 100%;
-  opacity: 90%;
-  position: absolute;
-}/*# sourceMappingURL=components.css.map */

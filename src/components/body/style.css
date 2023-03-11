@@ -1,3 +1,54 @@
 .bodycontainer {
-    display: flex;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+}
+
+.resultdemonstrator {
+  background-color: rgb(0, 95, 119);
+  color: white;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.teamselector {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 30px;
+  color: gray;
+  padding-left: 15px;
+}
+.headerimage {
+  width: 100%;
+}
+
+.resultcontainer {
+  width: 400px;
+  height: 500px;
+  margin: 20px;
+  width: 300px;
+  background-color: rgb(162, 218, 255, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.selectorsContainer {
+  margin: 20px;
+}
+.resetContainer {
+  padding: 10px;
+  width: 400px;
+  height: 500px;
+  margin: 20px;
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 1300px) {
+  .headerimage {
+    display: none;
+  }
 }

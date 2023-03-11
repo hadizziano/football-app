@@ -1,5 +1,4 @@
 import { resetDatabase } from "../../redux/api/api";
-import "./style.css";
 import React from "react";
 export const ResetDatabase = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import ResetDatabase from "../reset-database/reset";
 import { connect, useDispatch } from "react-redux/es/exports";
 import { insertGame } from "../../redux/insert/actions";
 import { insert_game } from "../../redux/api/api";
@@ -68,6 +68,7 @@ export const InsertGame = () => {
       </div>
       <br />
       <input type="button" value="Insert" onClick={insertthegame} />
+      <ResetDatabase />
     </div>
   );
 };

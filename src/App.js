@@ -15,8 +15,8 @@ export const App = ({ getData }) => {
 const AppWrapper = () => {
   return (
     <Router>
-      <Header />
       <Body />
+      <Header />
       <App />
     </Router>
   );

@@ -10,8 +10,6 @@ const Body = () => {
     <div className="bodycontainer">
       {/* <img className="headerImage" src={BodyPicture} /> */}
       <GameResults />
-      <ResetDatabase />
-      <InsertGame />
     </div>
   );
 };
