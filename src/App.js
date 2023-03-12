@@ -5,10 +5,11 @@ import { connect } from "react-redux";
 import { getData } from "./redux/api/api";
 import React, { useEffect } from "react";
 import { useRoutes, BrowserRouter as Router } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+import Home from "./pages/Home";
 export const App = ({ getData }) => {
-  //  let routes = useRoutes([{ path: "/", element: <Home /> }]);
-  let routes = null;
+  let routes = useRoutes([{ path: "/", element: <Home /> }]);
+  // let routes = null;
   return routes;
 };
 
@@ -16,6 +17,7 @@ const AppWrapper = () => {
   return (
     <Router>
       <Body />
+      <Link to="/">Home</Link>
       <Header />
       <App />
     </Router>
