@@ -7,8 +7,12 @@ import React, { useEffect } from "react";
 import { useRoutes, BrowserRouter as Router } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Home from "./pages/Home";
+import About from "./pages/About";
 export const App = ({ getData }) => {
-  let routes = useRoutes([{ path: "/", element: <Home /> }]);
+  let routes = useRoutes([
+    { path: "/", element: <Home /> },
+    { path: "/about", element: <About /> },
+  ]);
   // let routes = null;
   return routes;
 };
@@ -16,10 +20,10 @@ export const App = ({ getData }) => {
 const AppWrapper = () => {
   return (
     <Router>
-      <Body />
-      <Link to="/">Home</Link>
-      <Header />
       <App />
+      <Link to="/about">About</Link>
+      <Body />
+      <Header />
     </Router>
   );
 };
