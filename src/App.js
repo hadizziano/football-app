@@ -21,9 +21,6 @@ const AppWrapper = () => {
   return (
     <Router>
       <App />
-      <Link to="/about">About</Link>
-      <Body />
-      <Header />
     </Router>
   );
 };
