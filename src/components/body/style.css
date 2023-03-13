@@ -38,6 +38,9 @@
 
 .selectorsContainer {
   margin: 20px;
+  width: 30%;
+  padding: 10px;
+  background-color: rgb(0, 95, 119);
 }
 .resetContainer {
   padding: 10px;

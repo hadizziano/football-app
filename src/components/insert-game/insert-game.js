@@ -23,6 +23,7 @@ export const InsertGame = () => {
       <div className="selectorsContainer">
         team1
         <select
+          className="teamselector"
           name="team1"
           id="team1"
           onChange={(e) => setTeam1(e.target.value)}
@@ -42,33 +43,34 @@ export const InsertGame = () => {
           <option value="3">3</option>
           <option value="4">4 </option>
         </select>
+        <div>
+          team2
+          <select
+            className="teamselector"
+            name="team1"
+            id="team1"
+            onChange={(e) => setTeam2(e.target.value)}
+          >
+            <option value="AC Milan">AC Milan</option>
+            <option value="Inter Milan">Inter Milan</option>
+            <option value="AS Roma">AS Roma</option>
+            <option value="Juventus">Juventus </option>
+          </select>
+          <select
+            name="score1"
+            id="score1"
+            onChange={(e) => setGoals2(e.target.value)}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4 </option>
+          </select>
+        </div>{" "}
+        <br />
+        <input type="button" value="Insert" onClick={insertthegame} />
+        <ResetDatabase />
       </div>
-      <div>
-        team2
-        <select
-          name="team1"
-          id="team1"
-          onChange={(e) => setTeam2(e.target.value)}
-        >
-          <option value="AC Milan">AC Milan</option>
-          <option value="Inter Milan">Inter Milan</option>
-          <option value="AS Roma">AS Roma</option>
-          <option value="Juventus">Juventus </option>
-        </select>
-        <select
-          name="score1"
-          id="score1"
-          onChange={(e) => setGoals2(e.target.value)}
-        >
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4 </option>
-        </select>
-      </div>
-      <br />
-      <input type="button" value="Insert" onClick={insertthegame} />
-      <ResetDatabase />
     </div>
   );
 };

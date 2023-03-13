@@ -7,6 +7,7 @@ export default function insert() {
     <div>
       <Link to="/">Home</Link>
       <Link to="/About">About </Link>
+      <Link to="/insertgame">Insert game</Link>
       <Body />
     </div>
   );
