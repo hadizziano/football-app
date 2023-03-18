@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <div className="menucontainer">
-      <div>Home &emsp; Downloads &emsp; Products</div>
+      <div>
+        Home &emsp;&emsp;&emsp; Downloads &emsp;&emsp;&emsp; Products
+        &emsp;&emsp;&emsp; Contact &emsp;&emsp;&emsp; About
+      </div>
       <svg className="menubg" height="76" viewBox="0 0 830 76" fill="none">
         <path
           d="M52.0484 75.5C-3.55161 75.5 -3.78494 25.1667 3.04839 0H837.048V75.5H52.0484Z"
