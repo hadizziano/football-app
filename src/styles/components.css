@@ -10,12 +10,12 @@
 .menu {
   color: black;
   display: flex;
-  background-color: rgb(179, 210, 179);
+  background-color: rgb(255, 255, 255);
   width: 100%;
   height: 20px;
 }
 .menu div {
-  background-color: rgb(51, 73, 54);
+  background-color: rgb(255, 255, 255);
   color: rgb(179, 210, 179);
   margin-left: 5px;
   margin-top: 10px;
@@ -23,8 +23,13 @@
   border-radius: 7px;
   height: 20px;
 }
+.menu div a {
+  background-color: rgb(255, 255, 255);
+  color: rgb(65, 65, 65);
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 .menu div:hover {
-  background-color: rgb(179, 210, 179);
   cursor: pointer;
   color: rgb(51, 73, 54);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

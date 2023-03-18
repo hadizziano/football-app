@@ -1,15 +1,19 @@
 .bodycontainer {
-  display: flex;
   position: absolute;
   z-index: 1;
   text-align: center;
 }
 
+.addicon {
+  width: 150px;
+  margin-top: 150px;
+}
 .resultdemonstrator {
-  background-color: rgb(0, 95, 119);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(117, 117, 117);
   margin-top: 10px;
   border-radius: 20px;
+  border: solid 2px rgb(204, 204, 204);
   padding: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -24,16 +28,18 @@
 }
 .headerimage {
   width: 100%;
+  position: absolute;
 }
 
 .resultcontainer {
   width: 400px;
   height: 500px;
-  margin: 20px;
+  margin: 90px;
   width: 300px;
-  background-color: rgb(162, 218, 255, 0.5);
+  background-color: rgba(223, 223, 223, 0.5);
   padding: 20px;
   border-radius: 20px;
+  overflow: scroll;
 }
 
 .selectorsContainer {
@@ -52,6 +58,8 @@
 }
 @media screen and (max-width: 1300px) {
   .headerimage {
+    position: absolute;
+    width: 100px;
     display: none;
   }
 }

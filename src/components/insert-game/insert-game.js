@@ -4,10 +4,10 @@ import { connect, useDispatch } from "react-redux/es/exports";
 import { insertGame } from "../../redux/insert/actions";
 import { insert_game } from "../../redux/api/api";
 export const InsertGame = () => {
-  const [team1, setTeam1] = useState();
-  const [team2, setTeam2] = useState();
-  const [goals1, setGoals1] = useState();
-  const [goals2, setGoals2] = useState();
+  const [team1, setTeam1] = useState("AC Milan");
+  const [team2, setTeam2] = useState("Inter Milan");
+  const [goals1, setGoals1] = useState(1);
+  const [goals2, setGoals2] = useState(1);
   const dispatch = useDispatch();
   const insertthegame = () => {
     const game = {
