@@ -56,6 +56,44 @@
   width: 300px;
   background-color: rgb(255, 255, 255);
 }
+.headercontainer {
+  display: flex;
+  color: white;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+}
+.menucontainer {
+  position: absolute;
+  color: white;
+  text-align: right;
+  z-index: 20;
+  width: 100%;
+}
+
+.menucontainer div {
+  position: absolute;
+  right: 10%;
+  z-index: 20;
+}
+.menubg {
+  z-index: 10;
+}
+
+.ball {
+  width: 41%;
+  position: absolute;
+  z-index: 5;
+}
+
+.slogan {
+  z-index: 10;
+  font-size: 89px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 15%;
+  margin-left: 35%;
+}
+
 @media screen and (max-width: 1300px) {
   .headerimage {
     position: absolute;
