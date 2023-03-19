@@ -34,7 +34,7 @@ router.post("/insertgame", async (req, res) => {
     team1: req.body.params.team1,
     team2: req.body.params.team2,
     gameResult: req.body.params.gameResult,
-    scorrers: "non",
+    scorrers: req.body.params.scorrers,
   });
   try {
     const savedGame = await game.save();

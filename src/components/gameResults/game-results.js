@@ -68,6 +68,7 @@ export const GameResults = ({ getData }) => {
           {
             item.gameResult
           } &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {item.team2}
+          &emsp;&emsp;&emsp; {item.scorrers}
         </div>
       ))}
     </div>

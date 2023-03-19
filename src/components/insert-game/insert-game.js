@@ -8,15 +8,18 @@ export const InsertGame = () => {
   const [team2, setTeam2] = useState("Inter Milan");
   const [goals1, setGoals1] = useState(1);
   const [goals2, setGoals2] = useState(1);
+  const [scorrers, setScorrers] = useState("totti");
   const dispatch = useDispatch();
   const insertthegame = () => {
     const game = {
       team1: team1,
       team2: team2,
       gameResult: goals1 + " - " + goals2,
+      scorrers: scorrers,
     };
+    console.log(game);
     dispatch(insertGame(game));
-    insert_game(team1, team2, goals1 + " - " + goals2);
+    insert_game(team1, team2, goals1 + " - " + goals2, "scorrers");
   };
   return (
     <div classname="resultcontainer">
