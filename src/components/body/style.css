@@ -1,7 +1,7 @@
 .bodycontainer {
-  position: absolute;
   z-index: 1;
   text-align: center;
+  width: 100%;
 }
 
 .addicon {
@@ -9,44 +9,41 @@
   margin-top: 150px;
 }
 .resultdemonstrator {
-  background-color: rgb(255, 255, 255);
+  background-color: #f5f5f5;
   color: rgb(117, 117, 117);
   margin-top: 10px;
-  border-radius: 20px;
-  border: solid 2px rgb(204, 204, 204);
+
   padding: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .teamselector {
-  width: 100%;
+  right: 0;
+  border: solid 1px rgb(190, 190, 190);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 30px;
   border-radius: 20px;
-  border: none;
   margin-bottom: 30px;
+  margin-right: 30px;
   color: gray;
-  padding-left: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
+
 .headerimage {
   width: 100%;
   position: absolute;
 }
 
 .resultcontainer {
-  width: 400px;
+  width: 90%;
   height: 500px;
   margin: 90px;
-  width: 300px;
-  background-color: rgba(223, 223, 223, 0.5);
   padding: 20px;
   border-radius: 20px;
-  overflow: scroll;
 }
 
 .selectorsContainer {
-  margin: 20px;
-  width: 30%;
-  padding: 10px;
-  background-color: rgb(0, 95, 119);
+  text-align: left;
 }
 .resetContainer {
   padding: 10px;
@@ -60,7 +57,7 @@
   display: flex;
   color: white;
   background-size: contain;
-  position: absolute;
+
   width: 100%;
 }
 .menucontainer {

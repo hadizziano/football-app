@@ -6,7 +6,7 @@ export default function insert() {
   return (
     <div>
       <Header />
-      {/* <Body /> */}
+      <Body />
     </div>
   );
 }
