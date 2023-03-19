@@ -25,22 +25,49 @@ export const GameResults = ({ getData }) => {
   for (let i = 0; i < data.length; i++) results[i] = data[i];
   return (
     <div className="resultcontainer">
-      <select
-        className="teamselector"
-        name="team"
-        id="team"
-        onChange={sendTeamName}
-      >
-        <option value="AS Roma">AS Roma</option>
-        <option value="AC Milan">AC Milan</option>
-        <option value="Inter Milan">Inter Milan</option>
-        <option value="Atalanta">Atalanta </option>
-      </select>
+      <div className="selectorsContainer">
+        <select
+          className="teamselector"
+          // name="team"
+          // id="team"
+          // onChange={sendTeamName}
+        >
+          <option value="Italy">Italy</option>
+          <option value="Spain">Spain</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany </option>
+        </select>
+        <select
+          className="teamselector"
+          name="team"
+          id="team"
+          onChange={sendTeamName}
+        >
+          <option value="AS Roma">AS Roma</option>
+          <option value="AC Milan">AC Milan</option>
+          <option value="Inter Milan">Inter Milan</option>
+          <option value="Atalanta">Atalanta </option>
+        </select>
+        <select
+          className="teamselector"
+          // name="team"
+          // id="team"
+          // onChange={sendTeamName}
+        >
+          <option value="Champions league">Champions league</option>
+          <option value="La ligua">La ligua</option>
+          <option value="Calcio">Calcio</option>
+          <option value="Premier">Premier </option>
+        </select>
+      </div>
 
       {results.map((item) => (
         <div className="resultdemonstrator">
           <br />
-          {item.team1 + "  " + item.gameResult + "  " + item.team2}
+          {item.team1} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          {
+            item.gameResult
+          } &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {item.team2}
         </div>
       ))}
     </div>

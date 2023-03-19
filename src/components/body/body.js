@@ -12,16 +12,14 @@ const Body = () => {
   return (
     <div className="bodycontainer">
       {/* <img className="headerImage" src={BodyPicture} /> */}
-      <Menu />
       <div style={{ display: "flex" }}>
         <GameResults />
-
-        <Link to="/insertgame">
+        {/* <Link to="/insertgame">
           <div className="resultcontainer">
             {" "}
             <img className="addicon" alt="addicon" src={Addicon} />
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

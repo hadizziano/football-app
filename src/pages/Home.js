@@ -5,7 +5,7 @@ import Header from "../components/header/header";
 export default function insert() {
   return (
     <div>
-      {/* <Header/> */}
+      <Header />
       <Body />
     </div>
   );
