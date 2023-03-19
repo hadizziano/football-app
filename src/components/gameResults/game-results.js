@@ -64,7 +64,10 @@ export const GameResults = ({ getData }) => {
       {results.map((item) => (
         <div className="resultdemonstrator">
           <br />
-          {item.team1 + "  " + item.gameResult + "  " + item.team2}
+          {item.team1} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          {
+            item.gameResult
+          } &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {item.team2}
         </div>
       ))}
     </div>
