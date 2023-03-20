@@ -63,7 +63,7 @@ export const GameResults = ({ getData }) => {
 
       {results.map((item) => (
         <div className="resultdemonstrator">
-          <br />
+          {item.gamedate}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           {item.team1} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           {
             item.gameResult
