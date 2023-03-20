@@ -60,20 +60,25 @@ export const GameResults = ({ getData }) => {
           <option value="Premier">Premier </option>
         </select>
       </div>
-
+      <table className="tabviewtable">
+        <th>Games</th>
+        <th>Games</th>
+        <th>Games</th>
+        <th>Games</th>
+      </table>
       {results.map((item) => (
-        <div className="resultdemonstrator">
-          <div>{item.gamedate}</div>
-          <div>{item.team1}</div>
-          <div style={{ color: "black", fontWeight: "Bold" }}>
-            {item.gameResult}
-          </div>
-          <div> {item.team2}</div>
-
-          <div>{item.scorrers}</div>
-          <div style={{ textDecoration: "underline", color: "#D96969" }}>
-            More details
-          </div>
+        <div>
+          <table className="resulttable">
+            <thead>
+              <tr>
+                <td class="tg-387r">{item.gamedate}</td>
+                <td class="tg-0lax">{item.team1}</td>
+                <td class="tg-0lax">{item.gameResult}</td>
+                <td class="tg-0lax">{item.team2}</td>
+                <td class="tg-0lax">More details</td>
+              </tr>
+            </thead>
+          </table>
         </div>
       ))}
     </div>
