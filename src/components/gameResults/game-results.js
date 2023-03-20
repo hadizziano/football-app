@@ -63,12 +63,17 @@ export const GameResults = ({ getData }) => {
 
       {results.map((item) => (
         <div className="resultdemonstrator">
-          {item.gamedate}&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          {item.team1} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-          {
-            item.gameResult
-          } &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; {item.team2}
-          &emsp;&emsp;&emsp; {item.scorrers}
+          <div>{item.gamedate}</div>
+          <div>{item.team1}</div>
+          <div style={{ color: "black", fontWeight: "Bold" }}>
+            {item.gameResult}
+          </div>
+          <div> {item.team2}</div>
+
+          <div>{item.scorrers}</div>
+          <div style={{ textDecoration: "underline", color: "#D96969" }}>
+            More details
+          </div>
         </div>
       ))}
     </div>

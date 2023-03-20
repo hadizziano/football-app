@@ -12,9 +12,14 @@
   background-color: #f5f5f5;
   color: rgb(117, 117, 117);
   margin-top: 10px;
-
+  display: flex;
   padding: 10px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resultdemonstrator div {
+  margin-left: 2%;
+  margin-right: 5%;
 }
 .teamselector {
   right: 0;
