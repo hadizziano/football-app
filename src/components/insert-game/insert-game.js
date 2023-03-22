@@ -8,19 +8,31 @@ export const InsertGame = () => {
   const [team2, setTeam2] = useState("Inter Milan");
   const [goals1, setGoals1] = useState(1);
   const [goals2, setGoals2] = useState(1);
+  const [scorrers, setScorrers] = useState();
+  const [gamedate, setGamedate] = useState();
   const dispatch = useDispatch();
   const insertthegame = () => {
     const game = {
+      gamedate: gamedate,
       team1: team1,
       team2: team2,
       gameResult: goals1 + " - " + goals2,
+      scorrers: scorrers,
     };
+    console.log(game);
     dispatch(insertGame(game));
-    insert_game(team1, team2, goals1 + " - " + goals2);
+    insert_game(gamedate, team1, team2, goals1 + " - " + goals2, scorrers);
   };
   return (
     <div classname="resultcontainer">
       <div className="selectorsContainer">
+        <input
+          type="date"
+          onChange={(e) => setGamedate(e.target.value)}
+          id="gamedate"
+        />
+        <br />
+        <br />
         team1
         <select
           className="teamselector"
@@ -66,6 +78,13 @@ export const InsertGame = () => {
             <option value="3">3</option>
             <option value="4">4 </option>
           </select>
+          <br />
+          scorrers:
+          <input
+            type="text"
+            id="scorrers"
+            onChange={(e) => setScorrers(e.target.value)}
+          />
         </div>{" "}
         <br />
         <input type="button" value="Insert" onClick={insertthegame} />

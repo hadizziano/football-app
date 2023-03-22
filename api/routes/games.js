@@ -31,10 +31,11 @@ router.get("/", async (req, res) => {
 router.post("/insertgame", async (req, res) => {
   console.log(req.body);
   const game = new Game({
+    gamedate: req.body.params.gamedate,
     team1: req.body.params.team1,
     team2: req.body.params.team2,
     gameResult: req.body.params.gameResult,
-    scorrers: "non",
+    scorrers: req.body.params.scorrers,
   });
   try {
     const savedGame = await game.save();

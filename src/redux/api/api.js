@@ -29,15 +29,23 @@ export const resetDatabase = async () => {
   }
 };
 
-export const insert_game = async (teams1, teams2, gameResult) => {
+export const insert_game = async (
+  gamedate,
+  teams1,
+  teams2,
+  gameResult,
+  scorrers
+) => {
   console.log(teams1);
   try {
     let url = "http://localhost:3100/games/insertgame";
     const res = await axios.post(url, {
       params: {
+        gamedate: gamedate,
         team1: teams1,
         team2: teams2,
         gameResult: gameResult,
+        scorrers: scorrers,
       },
     });
     console.log(res);
