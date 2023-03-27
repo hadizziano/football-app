@@ -3,26 +3,30 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { getData, resetDatabase } from "../../redux/api/api";
 import { connect, useDispatch } from "react-redux/es/exports";
-import { setTeam } from "../../redux/search/actions";
+import { setTeam, setCountry } from "../../redux/search/actions";
 import ResetDatabase from "../reset-database/reset";
+
 export const GameResults = ({ getData }) => {
   const [selectedTeam, setSelectedTeam] = useState();
-  const [selectedCountry, setSelectedCountry] = useState();
+  const [selectedCountry, setSelectedCountry] = useState("Italy");
   const data = useSelector((state) => state.apiReducer.data);
+
+  // const teams = useSelector((state) => state.apiReducer.data.team);
+  // console.log("teams are", teams);
   const search = useSelector((state) => state.searchReducer);
   const dispatch = useDispatch();
   const sendTeamName = (e) => {
     dispatch(setTeam(e.target.value));
-    getData({}, search.country, e.target.value);
+    dispatch(setCountry(selectedCountry));
+    getData({}, selectedCountry, e.target.value);
   };
+
   // useEffect(() => {
   //   console.log("data is", search.country, search.team);
   //   getData({}, search.country, search.team);
   //   //eslint-disable-next-line react-hooks/exhaustive-deps
   //   //dff45
   // }, []);
-  var results = [];
-  for (let i = 0; i < data.length; i++) results[i] = data[i];
   return (
     <div className="resultcontainer">
       <div className="selectorsContainer">
@@ -30,7 +34,7 @@ export const GameResults = ({ getData }) => {
           className="teamselector"
           // name="team"
           // id="team"
-          // onChange={sendTeamName}
+          onChange={(e) => setSelectedCountry(e.target.value)}
         >
           <option value="Italy">Italy</option>
           <option value="Spain">Spain</option>
@@ -41,12 +45,18 @@ export const GameResults = ({ getData }) => {
           className="teamselector"
           name="team"
           id="team"
-          onChange={sendTeamName}
+          onClick={sendTeamName}
         >
-          <option value="AS Roma">AS Roma</option>
+          {/* <option value="AS Roma">AS Roma</option>
           <option value="AC Milan">AC Milan</option>
           <option value="Inter Milan">Inter Milan</option>
-          <option value="Atalanta">Atalanta </option>
+          <option value="Atalanta">Atalanta </option> */}
+          <option value="Select">Select team</option>
+          {data.team
+            ? data.team.map((item) => (
+                <option value={item.teamname}>{item.teamname}</option>
+              ))
+            : null}
         </select>
         <select
           className="teamselector"
@@ -66,21 +76,23 @@ export const GameResults = ({ getData }) => {
         <th>Games</th>
         <th>Games</th>
       </table>
-      {results.map((item) => (
-        <div>
-          <table className="resulttable">
-            <thead>
-              <tr>
-                <td class="tg-387r">{item.gamedate}</td>
-                <td class="tg-0lax">{item.team1}</td>
-                <td class="tg-0lax">{item.gameResult}</td>
-                <td class="tg-0lax">{item.team2}</td>
-                <td class="tg-0lax">More details</td>
-              </tr>
-            </thead>
-          </table>
-        </div>
-      ))}
+      {data.games
+        ? data.games.map((item) => (
+            <div>
+              <table className="resulttable">
+                <thead>
+                  <tr>
+                    <td class="tg-387r">{item.gamedate}</td>
+                    <td class="tg-0lax">{item.team1}</td>
+                    <td class="tg-0lax">{item.gameResult}</td>
+                    <td class="tg-0lax">{item.team2}</td>
+                    <td class="tg-0lax">More details</td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          ))
+        : null}
     </div>
   );
 };

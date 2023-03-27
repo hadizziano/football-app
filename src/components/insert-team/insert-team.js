@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import ResetDatabase from "../reset-database/reset";
 import { connect, useDispatch } from "react-redux/es/exports";
-import { insertGame } from "../../redux/insert/actions";
-import { insert_game } from "../../redux/api/api";
+import { insertTeam } from "../../redux/insert/actions";
+import { insert_team } from "../../redux/api/api";
 export const InsertTeam = () => {
   const [teamname, setTeamname] = useState();
   const [country, setCountry] = useState();
@@ -39,6 +38,7 @@ export const InsertTeam = () => {
         <br />
         <br />
         teamname
+        <br />
         <select
           className="teamselector"
           name="country"
@@ -67,20 +67,19 @@ export const InsertTeam = () => {
           <br />
           <br />
           <select
-            className="teamselector"
-            name="team1"
-            id="team1"
-            onChange={(e) => setTeam2(e.target.value)}
+            name="innerchampionships"
+            id="innerchampionships"
+            onChange={(e) => setInnerChampionships(e.target.value)}
           >
-            <option value="AC Milan">AC Milan</option>
-            <option value="Inter Milan">Inter Milan</option>
-            <option value="AS Roma">AS Roma</option>
-            <option value="Juventus">Juventus </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4 </option>
           </select>
           <select
-            name="score1"
-            id="score1"
-            onChange={(e) => setGoals2(e.target.value)}
+            name="championsleague"
+            id="championsleague"
+            onChange={(e) => setChampionsleague(e.target.value)}
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -88,16 +87,10 @@ export const InsertTeam = () => {
             <option value="4">4 </option>
           </select>
           <br />
-          scorrers:
-          <input
-            type="text"
-            id="scorrers"
-            onChange={(e) => setScorrers(e.target.value)}
-          />
-        </div>{" "}
+          championsleague
+        </div>
         <br />
-        <input type="button" value="Insert" onClick={insertthegame} />
-        <ResetDatabase />
+        <input type="button" value="Insert" onClick={inserttheteam} />
       </div>
     </div>
   );
@@ -105,11 +98,11 @@ export const InsertTeam = () => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    insertGame: (game) => dispatch(insertGame(game)),
+    insertTeam: (team) => dispatch(insertTeam(team)),
   };
 };
 
-const Connectedapp = connect(null, mapDispatchToProps)(InsertGame);
+const Connectedapp = connect(null, mapDispatchToProps)(InsertTeam);
 const ComponentWrapper = () => {
   return <Connectedapp />;
 };
