@@ -3,12 +3,14 @@ const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const gamesRoute = require("./routes/games");
-var cors = require('cors')
+const teamRoute = require("./routes/team");
+var cors = require("cors");
 // const initializeDb = require("./db/initialize-db");
 //Routes
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/games", gamesRoute);
+app.use("/team", teamRoute);
 
 // app.get("/", (req, res) => res.send("we are on home"));
 

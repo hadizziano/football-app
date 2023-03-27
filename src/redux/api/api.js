@@ -53,3 +53,27 @@ export const insert_game = async (
     console.log(err);
   }
 };
+
+export const insert_team = async (
+  teamname,
+  country,
+  teambirthday,
+  innerChampionships,
+  championsleague
+) => {
+  try {
+    let url = "http://localhost:3100/team/insertteam";
+    const res = await axios.post(url, {
+      params: {
+        teamname: teamname,
+        country: country,
+        teambirthday: teambirthday,
+        innerChampionships: innerChampionships,
+        championsleague: championsleague,
+      },
+    });
+    console.log(res);
+  } catch (err) {
+    console.log(err);
+  }
+};
