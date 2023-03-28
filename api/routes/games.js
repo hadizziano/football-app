@@ -2,6 +2,7 @@ const { json } = require("body-parser");
 const express = require("express");
 const router = express.Router();
 const Game = require("../models/games");
+const Team = require("../models/team");
 
 //RESET DATABASE
 
@@ -19,8 +20,10 @@ router.post("/reset", async (req, res) => {
 router.get("/", async (req, res) => {
   try {
     const games = await Game.find({ team1: req.query.team1 });
+    const team = await Team.find({ country: req.query.country });
     console.log(req.query);
-    res.json(games);
+    // console.log("teams for this country are", team);
+    res.json({ games: games, team: team });
   } catch (err) {
     res.json({ message: err });
   }
