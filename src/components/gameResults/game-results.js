@@ -40,6 +40,7 @@ export const GameResults = ({ getData }) => {
           <option value="Spain">Spain</option>
           <option value="France">France</option>
           <option value="Germany">Germany </option>
+          <option value="England">England </option>
         </select>
         <select
           className="teamselector"
