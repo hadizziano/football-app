@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux/es/exports";
 import { insertTeam } from "../../redux/insert/actions";
 import { insert_team } from "../../redux/api/api";
+import Header from "../header2/header";
 export const InsertTeam = () => {
   const [teamname, setTeamname] = useState();
   const [country, setCountry] = useState();
@@ -29,7 +30,8 @@ export const InsertTeam = () => {
   };
   return (
     <div classname="resultcontainer">
-      <div className="selectorsContainer">
+      <Header />
+      <div className="inputContainer">
         Team name: &nbsp;
         <input
           type="text"
@@ -38,7 +40,7 @@ export const InsertTeam = () => {
         />
         <br />
         <br />
-        <br />
+        Country: &nbsp;
         <select
           className="teamselector"
           name="country"
@@ -51,7 +53,7 @@ export const InsertTeam = () => {
           <option value="Juventus">France </option>
         </select>
         <br />
-        <br />
+        <br /> team birthday: &nbsp;
         <select
           name="teambirthday"
           id="teambirthday"
@@ -63,9 +65,8 @@ export const InsertTeam = () => {
           <option value="2009">2009 </option>
         </select>
         <div>
-          team birthday:
           <br />
-          <br />
+          Country league cup wons: &nbsp;
           <select
             name="innerchampionships"
             id="innerchampionships"
@@ -76,6 +77,8 @@ export const InsertTeam = () => {
             <option value="3">3</option>
             <option value="4">4 </option>
           </select>
+          <br />
+          Uefa league champions: &nbsp;
           <select
             name="championsleague"
             id="championsleague"
@@ -87,7 +90,6 @@ export const InsertTeam = () => {
             <option value="4">4 </option>
           </select>
           <br />
-          championsleague
         </div>
         <br />
         <input type="button" value="Insert" onClick={inserttheteam} />
