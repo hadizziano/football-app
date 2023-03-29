@@ -51,8 +51,21 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 30px;
   border-radius: 20px;
-  margin-bottom: 30px;
+  width: 60%;
   margin-right: 30px;
+  color: gray;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.resultteamselector {
+  right: 0;
+  border: solid 1px rgb(190, 190, 190);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 30px;
+  border-radius: 20px;
+  margin-right: 30px;
+  margin-bottom: 5em;
   color: gray;
   padding-left: 25px;
   padding-right: 25px;
@@ -72,15 +85,44 @@
 }
 
 .selectorsContainer {
+  justify-content: center;
+  align-content: center;
+  text-align: center;
   text-align: left;
 }
-.resetContainer {
+
+.inputContainer {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  padding: 50px;
+  background-color: rgb(248, 248, 248, 0.4);
+  border-radius: 20px;
+  top: 10em;
+  left: 45em;
+  text-align: left;
+  z-index: +20;
+}
+.inputContainer input {
+  margin-right: 3em;
+  border: solid 1px gray;
+  padding: 5px;
+  border-radius: 10px;
+}
+.inputtable {
+  width: 50%;
+  color: white;
+}
+.inputtable td {
   padding: 10px;
-  width: 400px;
-  height: 500px;
-  margin: 20px;
+  align-items: center;
+}
+
+.resetContainer {
+  margin-top: 20px;
   width: 300px;
-  background-color: rgb(255, 255, 255);
 }
 .headercontainer {
   display: flex;
@@ -105,6 +147,14 @@
   right: 8%;
   z-index: 20;
 }
+.menucontainer div a {
+  margin-right: 60px;
+}
+.menucontainer div a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .menubg {
   z-index: 10;
 }
@@ -121,6 +171,13 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 15%;
   margin-left: 35%;
+}
+
+.datepicker {
+  width: 18em;
+
+  border-radius: 10px;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1300px) {
