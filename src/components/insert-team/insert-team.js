@@ -30,6 +30,7 @@ export const InsertTeam = () => {
   return (
     <div classname="resultcontainer">
       <div className="selectorsContainer">
+        Team name: &nbsp;
         <input
           type="text"
           onChange={(e) => setTeamname(e.target.value)}
@@ -37,7 +38,6 @@ export const InsertTeam = () => {
         />
         <br />
         <br />
-        teamname
         <br />
         <select
           className="teamselector"

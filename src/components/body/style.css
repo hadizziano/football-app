@@ -90,18 +90,24 @@
   text-align: center;
   text-align: left;
 }
+.selectorsContainer a {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(88, 119, 88);
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
 
 .inputContainer {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
   padding: 50px;
   background-color: rgb(248, 248, 248, 0.4);
   border-radius: 20px;
   top: 10em;
-  left: 45em;
+  left: 27%;
   text-align: left;
   z-index: +20;
 }
@@ -180,10 +186,7 @@
   font-size: 12px;
 }
 
-@media screen and (max-width: 1300px) {
+/* @media screen and (max-width: 1300px) {
   .headerimage {
-    position: absolute;
-    width: 100px;
-    display: none;
   }
-}
+} */

@@ -6,7 +6,6 @@ import { connect, useDispatch } from "react-redux/es/exports";
 import { setTeam, setCountry } from "../../redux/search/actions";
 import ResetDatabase from "../reset-database/reset";
 import { Link } from "react-router-dom";
-
 export const GameResults = ({ getData }) => {
   const [selectedTeam, setSelectedTeam] = useState();
   const [selectedCountry, setSelectedCountry] = useState("Italy");
@@ -71,8 +70,8 @@ export const GameResults = ({ getData }) => {
           <option value="Calcio">Calcio</option>
           <option value="Premier">Premier </option>
         </select>
-        <Link to="/insertgame">Add game results to database</Link>
-        <Link to="/insertteam">Add new teams to database</Link>
+        <Link to="/insertgame">+ Add game results to database</Link>
+        <Link to="/insertteam">+ Add new teams to database</Link>
       </div>
       <table className="tabviewtable">
         <th>Games</th>
