@@ -32,17 +32,18 @@ export const InsertTeam = () => {
     <div classname="resultcontainer">
       <Header />
       <div className="inputContainer">
-        Team name: &nbsp;
+        Team name: <br />
         <input
+          className="inputwidth"
           type="text"
           onChange={(e) => setTeamname(e.target.value)}
           id="teamname"
         />
         <br />
         <br />
-        Country: &nbsp;
+        Country: <br />
         <select
-          className="teamselector"
+          className="inputwidth"
           name="country"
           id="country"
           onChange={(e) => setCountry(e.target.value)}
@@ -50,45 +51,39 @@ export const InsertTeam = () => {
           <option value="Italy">Italy</option>
           <option value="Spain">Spain</option>
           <option value="England">England</option>
-          <option value="Juventus">France </option>
+          <option value="France">France </option>
         </select>
         <br />
-        <br /> team birthday: &nbsp;
-        <select
+        <br /> team birthday: <br />
+        <input
+          className="inputwidth"
+          type="number"
+          min="1980"
+          max="2023"
           name="teambirthday"
           id="teambirthday"
           onChange={(e) => setTeambirthday(e.target.value)}
-        >
-          <option value="2006">2006</option>
-          <option value="2007">2007</option>
-          <option value="2008">2008</option>
-          <option value="2009">2009 </option>
-        </select>
+        />
         <div>
           <br />
-          Country league cup wons: &nbsp;
-          <select
+          Country league cup wons: <br />
+          <input
+            className="inputwidth"
+            type="number"
             name="innerchampionships"
             id="innerchampionships"
             onChange={(e) => setInnerChampionships(e.target.value)}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4 </option>
-          </select>
+          />
           <br />
-          Uefa league champions: &nbsp;
-          <select
+          <br />
+          Uefa league champions: <br />
+          <input
+            className="inputwidth"
+            type="number"
             name="championsleague"
             id="championsleague"
             onChange={(e) => setChampionsleague(e.target.value)}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4 </option>
-          </select>
+          />
           <br />
         </div>
         <br />

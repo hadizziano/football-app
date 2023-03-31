@@ -57,6 +57,11 @@
   padding-left: 25px;
   padding-right: 25px;
 }
+.inputwidth {
+  width: 90%;
+  height: 24px;
+  border-radius: 8px;
+}
 
 .resultteamselector {
   right: 0;
@@ -92,15 +97,16 @@
 }
 .selectorsContainer a {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(88, 119, 88);
-  color: rgb(255, 255, 255);
+  color: rgb(105, 105, 105);
+  border: solid 1px gray;
   text-decoration: none;
   margin-right: 20px;
-  padding: 10px;
+  padding: 4px;
   border-radius: 10px;
 }
 
 .inputContainer {
+  color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
   padding: 50px;
