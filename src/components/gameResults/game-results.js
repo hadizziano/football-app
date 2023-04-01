@@ -75,9 +75,9 @@ export const GameResults = ({ getData }) => {
       </div>
       <table className="tabviewtable">
         <th>Games</th>
-        <th>Games</th>
-        <th>Games</th>
-        <th>Games</th>
+        <th>Players</th>
+        <th>Coaches</th>
+        <th>Gymes</th>
       </table>
       {data.games
         ? data.games.map((item) => (
@@ -85,11 +85,12 @@ export const GameResults = ({ getData }) => {
               <table className="resulttable">
                 <thead>
                   <tr>
-                    <td class="tg-387r">{item.gamedate}</td>
-                    <td class="tg-0lax">{item.team1}</td>
-                    <td class="tg-0lax">{item.gameResult}</td>
-                    <td class="tg-0lax">{item.team2}</td>
-                    <td class="tg-0lax">More details</td>
+                    <td>{item.gamedate}</td>
+                    <td>{item.team1}</td>
+                    <td>{item.gameResult}</td>
+                    <td>{item.team2}</td>
+                    <td>{item.scorrers}</td>
+                    <td>More details</td>
                   </tr>
                 </thead>
               </table>
