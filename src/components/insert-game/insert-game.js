@@ -1,10 +1,15 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import ResetDatabase from "../reset-database/reset";
 import { connect, useDispatch } from "react-redux/es/exports";
 import { insertGame } from "../../redux/insert/actions";
 import { insert_game } from "../../redux/api/api";
 import Header from "../header2/header";
-export const InsertGame = () => {
+import { setTeam, setCountry } from "../../redux/search/actions";
+import { getData, resetDatabase } from "../../redux/api/api";
+
+export const InsertGame = ({ getData }) => {
+  const [selectedCountry, setSelectedCountry] = useState("");
   const [team1, setTeam1] = useState("AC Milan");
   const [team2, setTeam2] = useState("Inter Milan");
   const [goals1, setGoals1] = useState(1);
@@ -12,6 +17,11 @@ export const InsertGame = () => {
   const [scorrers, setScorrers] = useState();
   const [gamedate, setGamedate] = useState();
   const dispatch = useDispatch();
+  const sendTeamName = (e) => {
+    dispatch(setTeam("AC Milan"));
+    dispatch(setCountry("Italy"));
+    getData({}, "Italy", "AC Milan");
+  };
   const insertthegame = () => {
     const game = {
       gamedate: gamedate,
@@ -24,6 +34,8 @@ export const InsertGame = () => {
     dispatch(insertGame(game));
     insert_game(gamedate, team1, team2, goals1 + " - " + goals2, scorrers);
   };
+  const data = useSelector((state) => state.apiReducer.data);
+
   return (
     <div classname="resultcontainer">
       <Header />
@@ -36,12 +48,15 @@ export const InsertGame = () => {
                 className="teamselector"
                 name="team1"
                 id="team1"
+                onClick={sendTeamName}
                 onChange={(e) => setTeam1(e.target.value)}
               >
-                <option value="AC Milan">AC Milan</option>
-                <option value="Inter Milan">Inter Milan</option>
-                <option value="AS Roma">AS Roma</option>
-                <option value="Juventus">Juventus </option>
+                <option value="Select">Select team</option>
+                {data.team
+                  ? data.team.map((item) => (
+                      <option value={item.teamname}>{item.teamname}</option>
+                    ))
+                  : null}
               </select>
             </td>
             <td>
@@ -118,6 +133,7 @@ export const InsertGame = () => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    getData: ({}, team, country) => dispatch(getData({}, team, country)),
     insertGame: (game) => dispatch(insertGame(game)),
   };
 };
