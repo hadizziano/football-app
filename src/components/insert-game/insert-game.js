@@ -9,7 +9,7 @@ import { setTeam, setCountry } from "../../redux/search/actions";
 import { getData, resetDatabase } from "../../redux/api/api";
 
 export const InsertGame = ({ getData }) => {
-  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("Italy");
   const [team1, setTeam1] = useState("AC Milan");
   const [team2, setTeam2] = useState("Inter Milan");
   const [goals1, setGoals1] = useState(1);
@@ -19,8 +19,8 @@ export const InsertGame = ({ getData }) => {
   const dispatch = useDispatch();
   const sendTeamName = (e) => {
     dispatch(setTeam("AC Milan"));
-    dispatch(setCountry("Italy"));
-    getData({}, "Italy", "AC Milan");
+    dispatch(setCountry(selectedCountry));
+    getData({}, selectedCountry, "AC Milan");
   };
   const insertthegame = () => {
     const game = {
@@ -41,6 +41,22 @@ export const InsertGame = ({ getData }) => {
       <Header />
       <div className="inputContainer">
         <table className="inputtable">
+          <tr>
+            <td>
+              country: <br />
+              <select
+                className="inputwidth"
+                name="country"
+                id="country"
+                onChange={(e) => setSelectedCountry(e.target.value)}
+              >
+                <option value="Italy">Italy</option>
+                <option value="Spain">Spain</option>
+                <option value="England">England</option>
+                <option value="France">France </option>
+              </select>
+            </td>
+          </tr>
           <tr>
             <td>
               Team1 &nbsp;
@@ -76,12 +92,15 @@ export const InsertGame = ({ getData }) => {
                 className="teamselector"
                 name="team1"
                 id="team1"
+                onClick={sendTeamName}
                 onChange={(e) => setTeam2(e.target.value)}
               >
-                <option value="AC Milan">AC Milan</option>
-                <option value="Inter Milan">Inter Milan</option>
-                <option value="AS Roma">AS Roma</option>
-                <option value="Juventus">Juventus </option>
+                <option value="Select">Select team</option>
+                {data.team
+                  ? data.team.map((item) => (
+                      <option value={item.teamname}>{item.teamname}</option>
+                    ))
+                  : null}
               </select>
             </td>
             <td>
