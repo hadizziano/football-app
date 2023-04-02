@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import { GameResults } from "./components/gameResults/game-results";
-import { InsertGame } from "./components/insert-game/insert-game";
+import InsertGame from "./components/insert-game/index";
 import { InsertTeam } from "./components/insert-team/insert-team";
 export const App = ({ getData }) => {
   let routes = useRoutes([

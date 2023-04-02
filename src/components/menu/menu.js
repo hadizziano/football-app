@@ -5,8 +5,11 @@ const Menu = () => {
   return (
     <div className="menucontainer">
       <div>
-        Home &emsp;&emsp;&emsp; Downloads &emsp;&emsp;&emsp; Products
-        &emsp;&emsp;&emsp; Contact &emsp;&emsp;&emsp; About
+        <a>Home</a>
+        <a>About</a>
+        <a>Downloads</a>
+        <a>Login</a>
+        <a>Sign up</a>
       </div>
       <svg className="menubg" height="76" viewBox="0 0 830 76" fill="none">
         <path

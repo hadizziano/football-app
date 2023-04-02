@@ -5,7 +5,7 @@ import { getData, resetDatabase } from "../../redux/api/api";
 import { connect, useDispatch } from "react-redux/es/exports";
 import { setTeam, setCountry } from "../../redux/search/actions";
 import ResetDatabase from "../reset-database/reset";
-
+import { Link } from "react-router-dom";
 export const GameResults = ({ getData }) => {
   const [selectedTeam, setSelectedTeam] = useState();
   const [selectedCountry, setSelectedCountry] = useState("Italy");
@@ -31,7 +31,7 @@ export const GameResults = ({ getData }) => {
     <div className="resultcontainer">
       <div className="selectorsContainer">
         <select
-          className="teamselector"
+          className="resultteamselector"
           // name="team"
           // id="team"
           onChange={(e) => setSelectedCountry(e.target.value)}
@@ -43,7 +43,7 @@ export const GameResults = ({ getData }) => {
           <option value="England">England </option>
         </select>
         <select
-          className="teamselector"
+          className="resultteamselector"
           name="team"
           id="team"
           onClick={sendTeamName}
@@ -60,7 +60,7 @@ export const GameResults = ({ getData }) => {
             : null}
         </select>
         <select
-          className="teamselector"
+          className="resultteamselector"
           // name="team"
           // id="team"
           // onChange={sendTeamName}
@@ -70,12 +70,14 @@ export const GameResults = ({ getData }) => {
           <option value="Calcio">Calcio</option>
           <option value="Premier">Premier </option>
         </select>
+        <Link to="/insertgame">+ Add game results to database</Link>
+        <Link to="/insertteam">+ Add new teams to database</Link>
       </div>
       <table className="tabviewtable">
         <th>Games</th>
-        <th>Games</th>
-        <th>Games</th>
-        <th>Games</th>
+        <th>Players</th>
+        <th>Coaches</th>
+        <th>Gymes</th>
       </table>
       {data.games
         ? data.games.map((item) => (
@@ -83,11 +85,12 @@ export const GameResults = ({ getData }) => {
               <table className="resulttable">
                 <thead>
                   <tr>
-                    <td class="tg-387r">{item.gamedate}</td>
-                    <td class="tg-0lax">{item.team1}</td>
-                    <td class="tg-0lax">{item.gameResult}</td>
-                    <td class="tg-0lax">{item.team2}</td>
-                    <td class="tg-0lax">More details</td>
+                    <td>{item.gamedate}</td>
+                    <td>{item.team1}</td>
+                    <td>{item.gameResult}</td>
+                    <td>{item.team2}</td>
+                    <td>{item.scorrers}</td>
+                    <td>More details</td>
                   </tr>
                 </thead>
               </table>

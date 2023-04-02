@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux/es/exports";
 import { insertTeam } from "../../redux/insert/actions";
 import { insert_team } from "../../redux/api/api";
+import Header from "../header2/header";
 export const InsertTeam = () => {
   const [teamname, setTeamname] = useState();
   const [country, setCountry] = useState();
@@ -29,18 +30,20 @@ export const InsertTeam = () => {
   };
   return (
     <div classname="resultcontainer">
-      <div className="selectorsContainer">
+      <Header />
+      <div className="inputContainer">
+        Team name: <br />
         <input
+          className="inputwidth"
           type="text"
           onChange={(e) => setTeamname(e.target.value)}
           id="teamname"
         />
         <br />
         <br />
-        teamname
-        <br />
+        Country: <br />
         <select
-          className="teamselector"
+          className="inputwidth"
           name="country"
           id="country"
           onChange={(e) => setCountry(e.target.value)}
@@ -48,46 +51,40 @@ export const InsertTeam = () => {
           <option value="Italy">Italy</option>
           <option value="Spain">Spain</option>
           <option value="England">England</option>
-          <option value="Juventus">France </option>
+          <option value="France">France </option>
         </select>
         <br />
-        <br />
-        <select
+        <br /> team birthday: <br />
+        <input
+          className="inputwidth"
+          type="number"
+          min="1980"
+          max="2023"
           name="teambirthday"
           id="teambirthday"
           onChange={(e) => setTeambirthday(e.target.value)}
-        >
-          <option value="2006">2006</option>
-          <option value="2007">2007</option>
-          <option value="2008">2008</option>
-          <option value="2009">2009 </option>
-        </select>
+        />
         <div>
-          team birthday:
           <br />
-          <br />
-          <select
+          Country league cup wons: <br />
+          <input
+            className="inputwidth"
+            type="number"
             name="innerchampionships"
             id="innerchampionships"
             onChange={(e) => setInnerChampionships(e.target.value)}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4 </option>
-          </select>
-          <select
+          />
+          <br />
+          <br />
+          Uefa league champions: <br />
+          <input
+            className="inputwidth"
+            type="number"
             name="championsleague"
             id="championsleague"
             onChange={(e) => setChampionsleague(e.target.value)}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4 </option>
-          </select>
+          />
           <br />
-          championsleague
         </div>
         <br />
         <input type="button" value="Insert" onClick={inserttheteam} />

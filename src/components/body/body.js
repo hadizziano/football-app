@@ -14,6 +14,7 @@ const Body = () => {
       {/* <img className="headerImage" src={BodyPicture} /> */}
       <div style={{ display: "flex" }}>
         <GameResults />
+        <ResetDatabase />
         {/* <Link to="/insertgame">
           <div className="resultcontainer">
             {" "}
