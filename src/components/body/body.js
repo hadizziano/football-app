@@ -6,12 +6,13 @@ import ResetDatabase from "../reset-database/reset";
 import InsertGame from "../insert-game/insert-game";
 import Addicon from "../../images/icons/add.png";
 import "./style.css";
-import Menu from "../menu/menu";
+import { Subtitle } from "../subtitle/subtitle";
 import { Link } from "react-router-dom";
 const Body = () => {
   return (
     <div className="bodycontainer">
       {/* <img className="headerImage" src={BodyPicture} /> */}
+      <Subtitle />
       <div style={{ display: "flex" }}>
         <GameResults />
         <ResetDatabase />

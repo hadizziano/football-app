@@ -3,6 +3,7 @@ import { connect, useDispatch } from "react-redux/es/exports";
 import { insertTeam } from "../../redux/insert/actions";
 import { insert_team } from "../../redux/api/api";
 import Header from "../header2/header";
+import ChampionImage from "../../images/gallery/technique1.png";
 export const InsertTeam = () => {
   const [teamname, setTeamname] = useState();
   const [country, setCountry] = useState();
@@ -30,6 +31,7 @@ export const InsertTeam = () => {
   };
   return (
     <div classname="resultcontainer">
+      <img className="championimage" src={ChampionImage} />
       <Header />
       <div className="inputContainer">
         Team name: <br />

@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bacece34.css",
+    "main.js": "/static/js/main.89ca911c.js",
+    "static/media/bkg.png": "/static/media/bkg.c4dfaf31ffe73e86ee9b.png",
+    "static/media/black-template.jpg": "/static/media/black-template.1a5623718bcccad67dce.jpg",
+    "static/media/ball.png": "/static/media/ball.af28cf73437ac6042c03.png",
+    "static/media/technique1.png": "/static/media/technique1.fe40d0f12f8c3812d4ce.png",
+    "static/media/add.png": "/static/media/add.0f6a728175b7800f5329.png",
+    "index.html": "/index.html",
+    "main.bacece34.css.map": "/static/css/main.bacece34.css.map",
+    "main.89ca911c.js.map": "/static/js/main.89ca911c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bacece34.css",
+    "static/js/main.89ca911c.js"
+  ]
+}

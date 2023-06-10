@@ -39,7 +39,7 @@ export const InsertGame = ({ getData }) => {
   return (
     <div classname="resultcontainer">
       <Header />
-      <div className="inputContainer">
+      <div className="inputContainer" style={{ width: "30%" }}>
         <table className="inputtable">
           <tr>
             <td>
@@ -59,9 +59,9 @@ export const InsertGame = ({ getData }) => {
           </tr>
           <tr>
             <td>
-              Team1 &nbsp;
+              Team1 <br />
               <select
-                className="teamselector"
+                className="inputwidth"
                 name="team1"
                 id="team1"
                 onClick={sendTeamName}
@@ -76,7 +76,7 @@ export const InsertGame = ({ getData }) => {
               </select>
             </td>
             <td>
-              Score: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Score: <br />
               <input
                 type="number"
                 name="score1"
@@ -87,9 +87,9 @@ export const InsertGame = ({ getData }) => {
           </tr>
           <tr>
             <td>
-              Team2 &nbsp;
+              Team2 <br />
               <select
-                className="teamselector"
+                className="inputwidth"
                 name="team1"
                 id="team1"
                 onClick={sendTeamName}
@@ -104,7 +104,7 @@ export const InsertGame = ({ getData }) => {
               </select>
             </td>
             <td>
-              Score: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              Score: <br />
               <input
                 type="number"
                 name="score1"

@@ -1,3 +1,6 @@
+body {
+  overflow-x: hidden;
+}
 .bodycontainer {
   z-index: 1;
   text-align: center;
@@ -35,10 +38,12 @@
   width: 50%;
 }
 .tabviewtable th {
-  background-color: #6c9074;
+  background-color: #5f926a;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  height: 50px;
+  font-size: 13px;
+  padding-top: 8px;
+  height: 30px;
 }
 
 .resultdemonstrator div {
@@ -106,14 +111,15 @@
 }
 
 .inputContainer {
+  width: 20%;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   position: absolute;
   padding: 50px;
-  background-color: rgb(248, 248, 248, 0.4);
+  background-color: rgb(248, 248, 248, 0.1);
   border-radius: 20px;
   top: 10em;
-  left: 27%;
+  left: 32%;
   text-align: left;
   z-index: +20;
 }
@@ -203,6 +209,38 @@
   animation-duration: 4s;
 }
 
+.datepicker {
+  width: 18em;
+
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.subtitles {
+  position: absolute;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+  color: rgb(155, 155, 155);
+  animation: subanimation;
+  animation-duration: 30s;
+  animation-timing-function: cubic-bezier(1, 1, 1, 1);
+  animation-iteration-count: infinite;
+}
+.championimage {
+  position: absolute;
+  right: 0;
+  z-index: 20;
+  opacity: 20%;
+  border-radius: 60px;
+  margin: 30px;
+}
+
+/* @media screen and (max-width: 1300px) {
+  .headerimage {
+  }
+} */
+
 @keyframes sloganmove {
   from {
     opacity: 0;
@@ -212,14 +250,11 @@
   }
 }
 
-.datepicker {
-  width: 18em;
-
-  border-radius: 10px;
-  font-size: 12px;
-}
-
-/* @media screen and (max-width: 1300px) {
-  .headerimage {
+@keyframes subanimation {
+  from {
+    left: -1800px;
   }
-} */
+  to {
+    left: 1900px;
+  }
+}
